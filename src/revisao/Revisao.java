@@ -1,9 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package revisao;
+
+import java.util.Random;
 
 /**
  *
@@ -11,11 +8,123 @@ package revisao;
  */
 public class Revisao {
 
-    /**
-     * @param args the command line arguments
-     */
+    //método de inicialização da classe
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        Pessoa pessoa1 = new Pessoa();
+        Pessoa pessoa2 = new Pessoa();
+        
+        pessoa1.setCodigo(1);
+        pessoa1.setNome("Juca");
+        pessoa1.setEndereco("Lajeado");
+        pessoa1.setTelefone("190");
+        pessoa1.setValorConta(500);
+        pessoa1.setChequeEspecial(200);
+        
+        pessoa2.setCodigo(2);
+        pessoa2.setNome("João");
+        pessoa2.setValorConta(1000);
+        pessoa2.setChequeEspecial(100);
+        
+        /*lblNome1.setText(pessoa1.getNome());
+        lblValor1.setText(String.valueOf(pessoa1.getValorConta()));
+        lblChequeEspecial1.setText(String.valueOf(pessoa1.getChequeEspecial()));*/
+        
+        System.out.println("Saldo Inicial:");
+        System.out.println(pessoa1);
+        System.out.println("-------------------");
+        System.out.println(pessoa2);
+        System.out.println("-------------------");
+        
+        double valorTransferencia = 600;
+        System.out.println("Valor da Transferência: R$ " + valorTransferencia);
+        
+        if(pessoa1.credito(valorTransferencia) == true){
+            pessoa2.debito(valorTransferencia);
+        }
+        
+        System.out.println("Saldo Final:");
+        System.out.println(pessoa1);
+        System.out.println("-------------------");
+        System.out.println(pessoa2);
+        System.out.println("-------------------");
+        
+        valorTransferencia = 100;
+        System.out.println("Valor da Transferência: R$ " + valorTransferencia);
+        if(pessoa1.credito(valorTransferencia) == true){
+            pessoa2.debito(valorTransferencia);
+        }
+        System.out.println("Saldo Final:");
+        System.out.println(pessoa1);
+        System.out.println("-------------------");
+        System.out.println(pessoa2);
+        System.out.println("-------------------");
+        
+        /* Definir um valorConta para cada pessoa.
+           Criar um método dentro da classe Pessoa que diminui e um que aumenta
+           o valor da conta.
+        Ex: Transferir parte do valor de uma conta para a outra
+        Ao final, imprimir o saldo das duas pessoas
+        PLUS: Validar se a pessoa tem saldo para essa transferencia
+        */
+        
+//        System.out.println("Olá Mundo");
+//        int resultado = Funcoes.somarNumeros(1, 2);
+//        System.out.println("Resultado = " + resultado);
+//        
+//        //criamos uma instância de Funcoes
+//        Funcoes func = new Funcoes();
+//        resultado = func.subtrairNumeros(4, 1);
+//        System.out.println("Resultado = " + resultado);
+//        
+//        imprimirMensagem("TESTE 1");
+//        imprimirMensagem("TESTE 2");
+//        imprimirMensagem("TESTE 3");
+//        
+//        for(int i = 0; i <10; i++){
+//            System.out.println("valor de i = " + i);
+//        }
+//        
+//        int x = 15;
+//        while( x < 18 ){
+//            System.out.println("Sem permissão!!!");
+//            x++;
+//        }
+//        
+//        int[] numeros = {1,2,3};
+//        System.out.println("ENCHANCED FOR");
+//        for(int var : numeros){
+//            System.out.println(var);
+//        }
+//        
+//        System.out.println("FOR COMUM");
+//        for(int var = 0; var < numeros.length; var++){
+//            System.out.println(numeros[var]);
+//        }
+//        
+//        int[] numeros_array = {2,2,3,4,45,555};
+//        int res_soma = Funcoes.somarNumeros(numeros_array);
+//        System.out.println("RESULTADO DA SOMA = " + res_soma);
+//        
+//        int res_mul = Funcoes.multiplicaNumeros(numeros_array);
+//        System.out.println("RESULTADO DA MULTIPLICAÇÃO = " + res_mul);
+//        
+//        double res_div = Funcoes.divideNumeros(numeros_array);
+//        System.out.println("RESULTADO DA DIVISAO = " + res_div);
+//        
+//        int res_sub = Funcoes.subtraiNumeros(numeros_array);
+//        System.out.println("RESULTADO DA SUBTRACAO = " + res_sub);
+//        
+//        System.out.println();//linha em branco
+//        System.out.println();//linha em branco
+//        System.out.println();//linha em branco
+//        String sorteio = Funcoes.sortearNumeros(6, 60);
+//        System.out.println("SORTEIO = " + sorteio);
+        
+    }
+    
+    public static void imprimirMensagem(String par1){
+        System.out.println(par1);
     }
     
 }
